@@ -4,14 +4,16 @@
     margin: 0;
     padding: 0;
 }
-
+body {
+    background-color: rgb(159, 246, 9);
+}
 .landing-header {
     position: relative;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 700px;
+    height: 500px;
     background-color: black;
     color: greenyellow;
 }
@@ -19,6 +21,13 @@
     position: absolute;
     font-size: 4em;
     font-family: 'Syncopate', sans-serif;
-    top: 200px;
+    top: 20%;
     text-align: center;
+}
+.signuplink {
+    margin-left: 15px;
+}
+/* Insurance Card */
+.pack-card {
+    
 }

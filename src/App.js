@@ -2,6 +2,7 @@ import React, {useRef, useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import gsap from "gsap";
 import LandingPage from "./components/LandingPage";
+import PackageList from "./components/PackageList";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <LandingPage />
       
       <Routes>
-        <Route />
+        <Route path='/' element={<PackageList />}/>
 
       </Routes>
 
