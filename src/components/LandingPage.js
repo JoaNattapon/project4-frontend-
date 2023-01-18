@@ -10,28 +10,25 @@ const LandingPage = () => {
 
 
     const sentUserPassword = () => {
-
+        console.log(username)
         axios
             .post
-            ("https://localhost:8000/users/")
+            ("http://localhost:8000/users/",{
+                username:username,
+                password:password,
+                name:"testname",
+                address:"1234",
+                email:"sadofj@sdf",
+                
+            })
             .then((response) => {
                 
-                setUsername(response.data)
             })
             .catch((error) => {
                 console.log(error)
             })
         
-        axios
-            .post
-            ("https://localhost:8000/users/")
-            .then((response) => {
-                
-                setPassword(response.data)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
+        
     }
 
     return (
@@ -45,7 +42,8 @@ const LandingPage = () => {
 
             <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button>     
             
-            <a className="signuplink" href="">First time ! let's sign up</a>
+            <Link to='/letsignup' className="signuplink" >First time ! let's sign up</Link>
+            <Link to='/' className="signuplink" >all packages</Link>
         </div>
     )
 }
