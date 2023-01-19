@@ -16,9 +16,7 @@ const LandingPage = () => {
             ("http://localhost:8000/users/",{
                 username:username,
                 password:password,
-                name:"testname",
-                address:"1234",
-                email:"sadofj@sdf",
+                
                 
             })
             .then((response) => {
@@ -27,8 +25,6 @@ const LandingPage = () => {
             .catch((error) => {
                 console.log(error)
             })
-        
-        
     }
 
     return (

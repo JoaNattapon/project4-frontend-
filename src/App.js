@@ -5,6 +5,7 @@ import LandingPage from "./components/LandingPage";
 import PackageList from "./components/PackageList";
 import SignupForm from "./components/SignupForm";
 import Introduction from "./components/Introduction";
+import FooterPage from "./components/FooterPage";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route path='/letsignup' element={<SignupForm />}/>
 
       </Routes>
-
+      <FooterPage />
     </BrowserRouter>
   );
 }
