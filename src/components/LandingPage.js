@@ -44,7 +44,8 @@ const LandingPage = () => {
                 <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button>
 
                 <Link to='/letsignup' className="signuplink" ><p>Sign up</p></Link>
-                <Link to='/' className="signuplink" ><p>All packages</p></Link>
+                <Link to='/' className="signuplink" ><p>Introduction</p></Link>
+                <Link to='/letpackages' className="signuplink" ><p>All packages</p></Link>
             </div>
         </div>
     )

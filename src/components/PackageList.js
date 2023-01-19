@@ -5,7 +5,6 @@ import axios from "axios";
 
 const PackageList = () => {
 
-    const [packs, setPacks] = useState([]);
     const [allPacks, setAllPacks] = useState([]);
 
     useEffect(() => {
@@ -14,13 +13,13 @@ const PackageList = () => {
             .get("http://localhost:8000/packages/")
             .then((response) => {
                 console.log(response.data.packages)
-                setPacks(response.data.packages)
-
+                // setPacks(response.data.packages)
                 setAllPacks(response.data.packages.map((items, i) => (
-
+                    
                     <div className="packs" key={i}>
                         <p>{items.description}</p>
-                        <p>{items.price}</p>
+                        <p>{items.price} THB / year</p>
+                        <button className="buybtn">Buy</button>
                     </div>
 
                 )))

@@ -36,6 +36,7 @@ body {
 }
 .pack-card h2 {
     margin: 25px 0;
+    font-size: 2em;
 }
 
 /* Signup Form */
@@ -71,7 +72,53 @@ body {
 .loginbtn {
     width: 70px;
     margin-left: 15px;
-    color: rgb(18, 23, 8);
+    color: rgb(165, 236, 24);
+    background-color: rgb(4, 4, 195);
     font-size: 1em;
     cursor: pointer;
+}
+
+/* ------------- Pack Card ------------------- */
+.packs {
+    width: 400px;
+    margin: 0 auto;
+    border: 2px solid rgb(23, 39, 1);
+    border-radius: 19px;
+    color: rgb(0, 5, 9);
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+/* ------------- Introduction ------------------- */
+.introduction {
+    background: rgb(234,236,230);
+    border: 2px solid rgb(4, 4, 195);
+    border-radius: 24px;
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: start;
+}
+.introduction h2 {
+    margin: 25px 0;
+    text-align: center;
+}
+.diseasebullet {
+    text-align: start;
+    padding-left: 30%;
+}
+.introduction .center {
+    text-align: center;
+}
+.introduction p {
+    font-size: larger;
+    margin-bottom: 25px;
+    padding: 0 27px;
+}
+.introduction ul {
+    font-size: larger;
+}
+.second-p {
+    margin-top: 25px;
+    margin-bottom: 17px;
 }
