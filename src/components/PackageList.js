@@ -5,39 +5,39 @@ import axios from "axios";
 
 const PackageList = () => {
 
-    const [packs, setPacks] = useState('');
+    const [packs, setPacks] = useState([]);
+    const [allPacks, setAllPacks] = useState([]);
 
-    const getPacks = () => {
+    useEffect(() => {
 
         axios
-            .get
-            ("http://localhost:8000/packages/")
+            .get("http://localhost:8000/packages/")
             .then((response) => {
-                console.log(response)
-                setPacks(response.data)
+                console.log(response.data.packages)
+                setPacks(response.data.packages)
+
+                setAllPacks(response.data.packages.map((items, i) => (
+
+                    <div className="packs" key={i}>
+                        <p>{items.description}</p>
+                        <p>{items.price}</p>
+                    </div>
+
+                )))
             })
             .catch((error) => {
                 console.log(error)
             })
-    }
-    getPacks();
+    }, []);
 
-    const allPacks = packs.map((items,i) => {
-        return(
-            <div className="packs" key={i}>
-                <p>{items.description}</p>
-                <p>{items.price}</p>
-            </div>
-        )
-    })
 
-    return(
+    return (
         <div className="pack-card">
             <h2>All Packages</h2>
             <div>
                 {allPacks}
             </div>
-            
+
         </div>
     )
 }

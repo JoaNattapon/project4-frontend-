@@ -35,15 +35,17 @@ const LandingPage = () => {
         <div className="landing-header">
             <h2>Critical Disease Protector</h2>
 
-            <input className="signupinput" type="text" placeholder="username"
-            value={username} onChange={(e) => setUsername(e.target.value)} />
-            <input className="signupinput" type="text" placeholder="password"
-            value={password} onChange={(e) => setPassword(e.target.value)} />
+            <div className="below-header">
+                <input className="logininput" type="text" placeholder="username"
+                    value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input className="logininput" type="text" placeholder="password"
+                    value={password} onChange={(e) => setPassword(e.target.value)} />
 
-            <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button>     
-            
-            <Link to='/letsignup' className="signuplink" >First time ! let's sign up</Link>
-            <Link to='/' className="signuplink" >all packages</Link>
+                <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button>
+
+                <Link to='/letsignup' className="signuplink" ><p>Sign up</p></Link>
+                <Link to='/' className="signuplink" ><p>All packages</p></Link>
+            </div>
         </div>
     )
 }
