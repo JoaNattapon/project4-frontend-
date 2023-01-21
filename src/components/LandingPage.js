@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link, Navigation } from 'react-router-dom';
 import './style.css';
+import gsap from "gsap";
 import axios from "axios";
 
 const LandingPage = () => {
@@ -26,6 +27,25 @@ const LandingPage = () => {
                 console.log(error)
             })
     }
+
+    // Gsap Animation Apply
+
+    useEffect(() => {
+        const loginInputs = document.querySelectorAll(".logininput");
+        const loginBtn = document.querySelector(".loginbtn");
+        const signupLinks = document.querySelectorAll(".signuplink p");
+
+        gsap.set(loginInputs, { opacity: 0, y: 20 });
+        gsap.set(loginBtn, { opacity: 0, y: 20 });
+        gsap.set(signupLinks, { opacity: 0, y: 20 });
+
+        const tl = gsap.timeline();
+
+        tl
+            .to(loginInputs, { duration: 0.5, opacity: 1, y: 0, stagger: 0.1 })
+            .to(loginBtn, { duration: 0.5, opacity: 1, y: 0 }, "-=0.4")
+            .to(signupLinks, { duration: 0.5, opacity: 1, y: 0 }, "-=0.4")
+    }, []);
 
     return (
         <div className="landing-header">

@@ -11,6 +11,7 @@ import FooterPage from "./components/FooterPage";
 function App() {
   return (
     <BrowserRouter>
+
       <LandingPage />
       
       <Routes>
@@ -20,6 +21,7 @@ function App() {
 
       </Routes>
       <FooterPage />
+      
     </BrowserRouter>
   );
 }

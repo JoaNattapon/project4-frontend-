@@ -5,7 +5,8 @@
     padding: 0;
 }
 body {
-    background-color: rgb(159, 246, 9);
+    background: rgb(16,55,134);
+    background: linear-gradient(92deg, rgba(16,55,134,0.7261056286549707) 0%, rgba(159,246,9,1) 72%);
 }
 .landing-header {
     position: relative;
@@ -114,6 +115,15 @@ body {
     margin-bottom: 10px;
     cursor: pointer;
     padding: 20px;
+}
+.packs button {
+    margin-top: 8.5px;
+    padding: 10px;
+    border: none;
+    border-radius: 30%;
+    font-size: 1em;
+    background-color: rgb(4,4,195);
+    color: aliceblue;
 }
 .pack-card {
     margin-bottom: 130px;

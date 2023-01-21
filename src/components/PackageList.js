@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './style.css';
 import { BrowserRouter, Routes, Route, Link, Navigation } from 'react-router-dom';
+import gsap from "gsap";
 import axios from "axios";
 
 const PackageList = () => {
@@ -19,6 +20,7 @@ const PackageList = () => {
                     <div className="packs" key={i}>
                         <p>{items.description}</p>
                         <p>{items.price} THB / year</p>
+                        {/* <img>{items.image}</img> */}
                         <button className="buybtn">Buy</button>
                     </div>
 
