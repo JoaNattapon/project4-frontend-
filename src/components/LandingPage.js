@@ -17,8 +17,6 @@ const LandingPage = () => {
             ("http://localhost:8000/users/",{
                 username:username,
                 password:password,
-                
-                
             })
             .then((response) => {
                 
@@ -31,13 +29,15 @@ const LandingPage = () => {
     // Gsap Animation Apply
 
     useEffect(() => {
-        const loginInputs = document.querySelectorAll(".logininput");
-        const loginBtn = document.querySelector(".loginbtn");
-        const signupLinks = document.querySelectorAll(".signuplink p");
+        const heading = document.querySelector(".heading-landingpage")
+        const loginInputs = document.querySelectorAll(".logininput")
+        const loginBtn = document.querySelector(".loginbtn")
+        const signupLinks = document.querySelectorAll(".signuplink p")
 
-        gsap.set(loginInputs, { opacity: 0, y: 20 });
-        gsap.set(loginBtn, { opacity: 0, y: 20 });
-        gsap.set(signupLinks, { opacity: 0, y: 20 });
+        gsap.set(loginInputs, { opacity: 0, y: 20 })
+        gsap.set(loginBtn, { opacity: 0, y: 20 })
+        gsap.set(signupLinks, { opacity: 0, y: 20 })
+        gsap.set(heading, { opacity: 0, scale: 0.2, rotateX: -180})
 
         const tl = gsap.timeline();
 
@@ -45,11 +45,12 @@ const LandingPage = () => {
             .to(loginInputs, { duration: 0.5, opacity: 1, y: 0, stagger: 0.1 })
             .to(loginBtn, { duration: 0.5, opacity: 1, y: 0 }, "-=0.4")
             .to(signupLinks, { duration: 0.5, opacity: 1, y: 0 }, "-=0.4")
+            .to(heading, { duration: 1.5,rotateX: 360, opacity: 1, scale: 1}, "=0.1")
     }, []);
 
     return (
         <div className="landing-header">
-            <h2>Critical Disease Protector</h2>
+            <h2 className="heading-landingpage">Critical Disease Protector</h2>
 
             <div className="below-header">
                 <input className="logininput" type="text" placeholder="username"

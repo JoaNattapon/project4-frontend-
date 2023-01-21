@@ -8,6 +8,8 @@ body {
     background: rgb(16,55,134);
     background: linear-gradient(92deg, rgba(16,55,134,0.7261056286549707) 0%, rgba(159,246,9,1) 72%);
 }
+
+/* ------------------ LandingPage ------------------ */
 .landing-header {
     position: relative;
     display: flex;
