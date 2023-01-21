@@ -20,7 +20,7 @@ const PackageList = () => {
                     <div className="packs" key={i}>
                         <p>{items.description}</p>
                         <p>{items.price} THB / year</p>
-                        {/* <img>{items.image}</img> */}
+                        <img src={items.image} alt="Package Image"/>
                         <button className="buybtn">Buy</button>
                     </div>
 

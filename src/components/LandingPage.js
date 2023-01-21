@@ -55,7 +55,7 @@ const LandingPage = () => {
             <div className="below-header">
                 <input className="logininput" type="text" placeholder="username"
                     value={username} onChange={(e) => setUsername(e.target.value)} />
-                <input className="logininput" type="text" placeholder="password"
+                <input className="logininput" type="password" placeholder="password"
                     value={password} onChange={(e) => setPassword(e.target.value)} />
 
                 <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button>

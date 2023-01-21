@@ -11,6 +11,8 @@ const SignupForm = () => {
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
 
+    const [message, setMessage] = useState("");
+
     const sentSignup = () => {
         
         console.log(username)
@@ -25,7 +27,7 @@ const SignupForm = () => {
                 
             })
             .then((response) => {
-                
+                setMessage(`Thank you for sign up ${name} :)`)
             })
             .catch((error) => {
                 console.log(error)
@@ -38,7 +40,7 @@ const SignupForm = () => {
             <div className="signupinput">
                 <input className="signupbtn" type="text" placeholder="username"
                     value={username} onChange={(e) => setUsername(e.target.value)}/>
-                <input className="signupbtn" type="text" placeholder="password"
+                <input className="signupbtn" type="password" placeholder="password"
                     value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <input className="signupbtn" type="text" placeholder="name"
                     value={name} onChange={(e) => setName(e.target.value)}/>
@@ -49,6 +51,7 @@ const SignupForm = () => {
                 
             </div>
                 <button className="signupclick" onClick={() => sentSignup()}>Signup</button>
+                <p className="hi-signup">{message}</p>
 
         </div>
     )
