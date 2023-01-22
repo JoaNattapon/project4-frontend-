@@ -191,7 +191,7 @@ span:before {
     white-space: pre;
 }
 
-/* --------------------- FooterPage --------------- */
+/* --------------------- FooterPage ------------------------- */
 
 .parentfooter {
     position: absolute;
@@ -207,4 +207,45 @@ span:before {
     padding: 35px 0;
     bottom: 0;
     width: 100%;
+}
+
+/* ---------------------- Respondsive design------------------ */
+@media(max-width: 900px) {
+    .below-header {
+        display: grid;
+        grid-template-columns: auto;
+        margin-top: 24%;
+    }
+    .landing-header {
+        height: 450px;
+    }
+    .landing-header h2 {
+        font-size: 1.5em;
+        top: 12%;
+    }
+    .signuplink {
+        margin: 6px 0;
+    }
+    .logininput {
+        margin-bottom: 6px;
+        height: 25px;
+        
+    }
+    .loginbtn {
+        margin: 5px 0 14px 0;
+        height: 35px;
+    }
+    .signupinput {
+        max-width: 200px;
+        display: grid;
+        grid-template-columns: 200px;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .signupbtn {
+        margin: 5px 0;
+    }
+    .signupform {
+        min-height: 600px;
+    }
 }
