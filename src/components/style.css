@@ -149,7 +149,7 @@ body {
 }
 
 /* ------------- Introduction ------------------- */
-.introduction {
+.introduction1, .introduction2, .introduction3, .introduction4, .introduction5 {
     background: rgb(234,236,230);
     border: 2px solid rgb(4, 4, 195);
     border-radius: 24px;
@@ -159,9 +159,10 @@ body {
     
 }
 .mainintro {
+    margin-top: 30px;
     margin-bottom: 140px;
 }
-.introduction h2 {
+.introduction1 h2, .introduction2 h2, .introduction3 h2, .introduction4 h2, .introduction5 h2 {
     margin: 25px 0;
     text-align: center;
 }
@@ -172,12 +173,12 @@ body {
 .introduction .center {
     text-align: center;
 }
-.introduction p {
+.introduction1 p, .introduction2 p, .introduction3 p, .introduction4 p, .introduction5 p {
     font-size: larger;
     margin-bottom: 25px;
     padding: 0 27px;
 }
-.introduction ul {
+.introduction1 ul, .introduction2 ul, .introduction3 ul, .introduction4 ul, .introduction5 ul {
     font-size: larger;
 }
 .second-p {

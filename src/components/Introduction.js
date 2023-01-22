@@ -1,12 +1,46 @@
 import './style.css';
 import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 const Introduction = () => {
 
+    const introduction1 = useRef(null);
+    const introduction2 = useRef(null);
+    const introduction3 = useRef(null);
+    const introduction4 = useRef(null);
+    const introduction5 = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(introduction1.current, {
+            scrollTrigger: {
+                trigger: introduction1.current,
+                start: "top 50%",
+                toggleActions: "restart none none none",
+            },
+            opacity: 1,
+            y: -50,
+            ease: "power4.out",
+        });
+        gsap.to(introduction2.current, {
+            // similar animation for introduction2
+        });
+        gsap.to(introduction3.current, {
+            // similar animation for introduction3
+        });
+        gsap.to(introduction4.current, {
+            // similar animation for introduction3
+        });
+        gsap.to(introduction4.current, {
+            // similar animation for introduction3
+        });
+    }, []);
 
     return(
         <div className='mainintro'>
-            <div className='introduction'>
+            <div ref={introduction1} className='introduction1'>
                 <h2>Did you know ?</h2>
                 <p>Hi there, we glad to see you here.If what you are looking for is one good
                     health insurance package that will be cover to all of diseases that mostly
@@ -30,7 +64,7 @@ const Introduction = () => {
                     health package <Link to='/letpackages' className='center'><p>Click here!</p></Link>
                 </p>
             </div>
-            <div className='introduction'>
+            <div ref={introduction2} className='introduction2'>
                 <h2>The definition of Cancer disease</h2>
                 <p>
                     Cancer is a disease in which some of the body’s cells grow uncontrollably and spread to other parts of the body.
@@ -40,7 +74,7 @@ const Introduction = () => {
                     Benign tumors do not spread into, or invade, nearby tissues. When removed, benign tumors usually don’t grow back, whereas cancerous tumors sometimes do. Benign tumors can sometimes be quite large, however. Some can cause serious symptoms or be life threatening, such as benign tumors in the brain.
                 </p>
             </div>
-            <div className='introduction'>
+            <div ref={introduction3} className='introduction3'>
                 <h2>The definition of Heart disease</h2>
                 <p>
                     Coronary artery disease is a common heart condition that affects the major blood vessels that supply the heart muscle. Cholesterol deposits (plaques) in the heart arteries are usually the cause of coronary artery disease. The buildup of these plaques is called atherosclerosis (ath-ur-o-skluh-ROE-sis). Atherosclerosis reduces blood flow to the heart and other parts of the body. It can lead to a heart attack, chest pain (angina) or stroke.
@@ -56,7 +90,7 @@ const Introduction = () => {
                     You might not be diagnosed with coronary artery disease until you have a heart attack, angina, stroke or heart failure. It's important to watch for heart symptoms and discuss concerns with your health care provider. Heart (cardiovascular) disease can sometimes be found early with regular health checkups.
                 </p>
             </div>
-            <div className='introduction'>
+            <div ref={introduction4} className='introduction4'>
                 <h2>The definition of Diabetes disease</h2>
                 <p>
                     Diabetes is a chronic (long-lasting) health condition that affects how your body turns food into energy.
@@ -65,7 +99,7 @@ const Introduction = () => {
                     There isn’t a cure yet for diabetes, but losing weight, eating healthy food, and being active can really help. Other things you can do to help:
                 </p>
             </div>
-            <div className='introduction'>
+            <div ref={introduction5} className='introduction5'>
                 <h2>The definition of Hypertensive disease</h2>
                 <p>
                     High blood pressure, also called hypertension, is blood pressure that is higher than normal. Your blood pressure changes throughout the day based on your activities. Having blood pressure measures consistently above normal may result in a diagnosis of high blood pressure (or hypertension).
