@@ -9,6 +9,7 @@ const LandingPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    const [message, setMessage] = useState("");
 
     const sentUserPassword = () => {
         console.log(username)
@@ -19,7 +20,7 @@ const LandingPage = () => {
                 password:password,
             })
             .then((response) => {
-                
+                setMessage('Logged in successfully')
             })
             .catch((error) => {
                 console.log(error)
@@ -63,7 +64,9 @@ const LandingPage = () => {
                 <Link to='/letsignup' className="signuplink" ><p>Register</p></Link>
                 <Link to='/' className="signuplink" ><p>Introduction</p></Link>
                 <Link to='/letpackages' className="signuplink" ><p>All packages</p></Link>
+                <Link to='/profile' className="signuplink" ><p>Profile</p></Link>
             </div>
+            <p className="loggedinsuccess">{message}</p>
         </div>
     )
 }

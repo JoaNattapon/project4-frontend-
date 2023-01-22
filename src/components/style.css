@@ -32,6 +32,12 @@ body {
     display: flex;
     margin-top: 70px;
 }
+.loggedinsuccess {
+    position: absolute;
+    top: 250px;
+    left: 305px;
+    color: rgb(20, 199, 4);
+}
 
 /* ------------------- Insurance Card --------------*/
 .pack-card {
@@ -217,7 +223,7 @@ span:before {
         margin-top: 24%;
     }
     .landing-header {
-        height: 450px;
+        height: 580px;
     }
     .landing-header h2 {
         font-size: 1.5em;
@@ -247,5 +253,10 @@ span:before {
     }
     .signupform {
         min-height: 600px;
+    }
+    .loggedinsuccess {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }

@@ -6,6 +6,7 @@ import PackageList from "./components/PackageList";
 import SignupForm from "./components/SignupForm";
 import Introduction from "./components/Introduction";
 import FooterPage from "./components/FooterPage";
+import Profile from "./components/Profile";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Introduction />}/>
         <Route path='/letpackages' element={<PackageList />}/>
         <Route path='/letsignup' element={<SignupForm />}/>
+        <Route path='/profile' element={<Profile />} />
 
       </Routes>
       <FooterPage />
