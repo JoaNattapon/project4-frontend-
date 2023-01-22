@@ -18,7 +18,7 @@ const SignupForm = () => {
         console.log(username)
         axios
             .post
-            ("http://localhost:8000/users/",{
+            ("http://localhost:8000/signup/",{
                 username: username,
                 password: password,
                 name: name,
@@ -36,7 +36,7 @@ const SignupForm = () => {
 
     return (
         <div className="signupform">
-            <h2>One line | Sign up</h2>
+            <h2>One line | Register</h2>
             <div className="signupinput">
                 <input className="signupbtn" type="text" placeholder="username"
                     value={username} onChange={(e) => setUsername(e.target.value)}/>
@@ -50,7 +50,7 @@ const SignupForm = () => {
                     value={email} onChange={(e) => setEmail(e.target.value)}/>
                 
             </div>
-                <button className="signupclick" onClick={() => sentSignup()}>Signup</button>
+                <button className="signupclick" onClick={() => sentSignup()}>Confirm</button>
                 <p className="hi-signup">{message}</p>
 
         </div>

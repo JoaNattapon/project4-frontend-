@@ -14,7 +14,7 @@ const LandingPage = () => {
         console.log(username)
         axios
             .post
-            ("http://localhost:8000/users/",{
+            ("http://localhost:8000/login/",{
                 username:username,
                 password:password,
             })
@@ -60,7 +60,7 @@ const LandingPage = () => {
 
                 <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button>
 
-                <Link to='/letsignup' className="signuplink" ><p>Sign up</p></Link>
+                <Link to='/letsignup' className="signuplink" ><p>Register</p></Link>
                 <Link to='/' className="signuplink" ><p>Introduction</p></Link>
                 <Link to='/letpackages' className="signuplink" ><p>All packages</p></Link>
             </div>
