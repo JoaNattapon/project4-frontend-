@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Health insurance
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##  Landing page UI
+![image](https://user-images.githubusercontent.com/101511565/213957553-acd83a45-9580-4398-8ee7-c8b47ed021d8.png)
 
-## Available Scripts
+##  Technology Stack
+<p float="left">
+  <img src="https://www.datocms-assets.com/45470/1631110818-logo-react-js.png" width="120px" height="80px" />  
+  <img src="https://cdn.mos.cms.futurecdn.net/252USFwhUaVeFm664hWzFA.jpg" width="120px" height="60px" />
+</p>
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## User Story
+  Hello, there let's explain what happen in client side. First once user get into the landing page they will clearly see the the navigation bar up top
+  and below the nav bar they will see an introduction page that explain about all critical disease definition and all other importance information 
+  to help customer gain more knowledge about the disease and also health insurance package and protection, without any need to registration. After the customer 
+  go through all of the information they can dicide either they want to leave a page or go into other link such as registration, all packages. So, After they finish
+  registration they will be able to log in using their username and password and they just regist. After that they can go to look up on insurance packages to see
+  what suit them the most. Finally, in case they still have question to ask for they can look down on the footer they will see the contact for Dhipaya for more detail.
+  
+## Wire frame
+  Landing page - https://wireframe.cc/zJDlSE
+  package detail - https://wireframe.cc/t4oirF
+  User profile - https://wireframe.cc/8N8uFS
+  
+## What I've learn 
+  This is a final project the schedule is tight and something things can get messi easily even you plan out everything carefully. That is because I still have low 
+  experience and am touching with this tool. However, that is the best thing that should heppen to all of us especially when we just start out to learn to programming
+  we will better understand something when we really get our hand dirty and try to go through debuging process by yourself. And another that I've learned from this 
+  project is that don't compare yourself to other everyone have difference learning speed just hold tight it will come definitely !. Last but not least, communication !
+  this is another crucial point when you got stuck for too long just ask your instructor or your classmate right away noone expecting you to know all of these tool
+  right after finish the lesson. Finally, thank you so much for reading this hope youguys doing well happy coding ! :)
+  
+  
