@@ -3,17 +3,18 @@ import './style.css';
 import { BrowserRouter, Routes, Route, Link, Navigation } from 'react-router-dom';
 import gsap from "gsap";
 import axios from "axios";
+import { useParams } from 'react-router';
 
 const Profile = () => {
-
+    const params= useParams()
     const [user, setUser] = useState({})
 
     
     
     useEffect(() => {
-        axios.get("http://localhost:8000/users/<int:pk>")
+        axios.get(`http://localhost:8000/users/${params.id}`)
         .then(response => {
-
+            setUser(response.data)
         })
         .catch(error => {
             console.log(error)
