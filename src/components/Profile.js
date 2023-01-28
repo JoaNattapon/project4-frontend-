@@ -7,8 +7,8 @@ import { useParams } from 'react-router';
 
 const Profile = () => {
 
-    const params = useParams()
     const [user, setUser] = useState({})
+    const [detail, setDetail] = useState([])
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [firstname, setFirstname] = useState("")
@@ -31,8 +31,7 @@ const Profile = () => {
     // }, [])
 
     const edit = (e) => {
-        // validateEmail()
-        // validatePassword()
+        
         axios
             .put(
                 `https://red-healthy-basket-clam.cyclic.app/user/edit`,
@@ -55,13 +54,50 @@ const Profile = () => {
                 
             });
     };
-    useEffect(() => {
+    useEffect((e) => {
+        // e.preventDefault();
         axios
             .get(`https://red-healthy-basket-clam.cyclic.app/user/getuser`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`},
             })
             .then((res) => {
                 console.log(res.data)
+                setDetail([
+                    <div>
+                        <h2>{user.name}Profile</h2>
+                        <form>
+                            <label>
+                                Username :
+                                <input className="signupbtn" type="text" value={user.username} defaultValue={res.data.username} onChange={(e) => { setUsername(e.target.value) }} />
+                            </label>
+                            <label>
+                                Firstname :
+                                <input className="signupbtn" type="text" value={user.firstname} defaultValue={res.data.firstname} onChange={(e) => { setFirstname(e.target.value) }} />
+                            </label>
+                            <label>
+                                Lastname :
+                                <input className="signupbtn" type="text" value={user.lastname} defaultValue={res.data.lastname} onChange={(e) => { setLastname(e.target.value) }} />
+                            </label>
+                            <label>
+                                Phone :
+                                <input className="signupbtn" type="text" value={user.phone} defaultValue={res.data.phone} onChange={(e) => { setPhone(e.target.value) }} />
+                            </label>
+                            <label>
+                                Address :
+                                <input className="signupbtn" type="text" value={user.address} defaultValue={res.data.address} onChange={(e) => { setAddress(e.target.value) }} />
+                            </label>
+                            <label>
+                                Email :
+                                <input className="signupbtn" type="text" value={user.email} defaultValue={res.data.email} onChange={(e) => { setEmail(e.target.value) }} />
+                            </label>
+                            <label>
+                                Package bought :
+                                <input className="signupbtn" type="text" value={user.mypackage} defaultValue={res.data.mypackage} onChange={(e) => { setMyPackage(e.target.value) }} />
+                            </label>
+                        </form>
+                        <button className="signupclick" onClick={() => edit()}>Confirm</button>
+                    </div>
+                ])
                 setUsername(res.data.username);
                 setPassword(res.data.password);
                 setFirstname(res.data.firstname);
@@ -69,27 +105,17 @@ const Profile = () => {
                 setPhone(res.data.phone);
                 setAddress(res.data.address);
                 setEmail(res.data.email);
-                setMyPackage(res.data.package_id);
+                setMyPackage(res.data.package);
             })
             .catch((err) => {
-                // console.log(err);
+                console.log(err);
             });
     }, []);
 
 
     return(
         <div>
-            <h2>{user.name}Profile</h2>
-            <form>
-            <input className="signupbtn" type="text" value={user.username} defaultValue={username} onChange={(e) => {setUsername(e.target.value)}}/>
-            <input className="signupbtn" type="text" value={user.password} defaultValue={password} onChange={(e) => {setPassword(e.target.value)}}/>
-            <input className="signupbtn" type="text" value={user.firstname} defaultValue={firstname} onChange={(e) => {setFirstname(e.target.value)}}/>
-            <input className="signupbtn" type="text" value={user.lastname} defaultValue={lastname} onChange={(e) => {setLastname(e.target.value)}}/>
-            <input className="signupbtn" type="text" value={user.phone} defaultValue={phone} onChange={(e) => {setPhone(e.target.value)}}/>
-            <input className="signupbtn" type="text" value={user.address} defaultValue={address} onChange={(e) => {setAddress(e.target.value)}}/>
-            <input className="signupbtn" type="text" value={user.email} defaultValue={email} onChange={(e) => {setEmail(e.target.value)}}/>
-            <input className="signupbtn" type="text" value={user.mypackage} defaultValue={mypackage} onChange={(e) => {setMyPackage(e.target.value)}}/>
-            </form>
+            {detail}
         </div>
     )
 }
