@@ -18,12 +18,15 @@ const SignupForm = () => {
         console.log(username)
         axios
             .post
-            ("http://localhost:8000/signup/",{
+            ("https://red-healthy-basket-clam.cyclic.app/user/signup",{
                 username: username,
                 password: password,
-                name: name,
+                phone: "123",
+                firstname: "nat",
+                lastname: "hi",
                 address: address,
                 email: email,
+                package_id: 0
                 
             })
             .then((response) => {

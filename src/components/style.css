@@ -132,9 +132,10 @@ body {
     border-radius: 19px;
     color: rgb(0, 5, 9);
     margin-bottom: 10px;
-    cursor: pointer;
+    /* cursor: pointer; */
     padding: 20px;
 }
+
 .packs button {
     margin-top: 8.5px;
     padding: 10px;
@@ -143,6 +144,10 @@ body {
     font-size: 1em;
     background-color: rgb(4,4,195);
     color: aliceblue;
+    cursor: pointer;
+}
+.buybtn:active {
+    transform: scale(0.90);
 }
 .pack-card {
     margin-bottom: 130px;

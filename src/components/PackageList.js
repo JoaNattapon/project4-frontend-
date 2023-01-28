@@ -7,21 +7,35 @@ import axios from "axios";
 const PackageList = () => {
 
     const [allPacks, setAllPacks] = useState([]);
+    // const [buyPack, setBuyPack] = useState();
+
+    const sentPackage = (pack) => {
+        // console.log(username)
+        axios
+            .post("https://red-healthy-basket-clam.cyclic.app/user/buypack", {
+                package: pack
+            })
+            .then((response) => {
+                
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
 
     useEffect(() => {
 
         axios
-            .get("http://localhost:8000/packages/")
+            .get("http://localhost:8000/package")
             .then((response) => {
                 console.log(response.data.packages)
                 // setPacks(response.data.packages)
-                setAllPacks(response.data.packages.map((items, i) => (
+                setAllPacks(response.data.map((items, i) => (
                     
                     <div className="packs" key={i}>
                         <p>{items.description}</p>
                         <p>{items.price} THB / year</p>
-                        {/* <img src={items.image} alt="Package Image"/> */}
-                        <button className="buybtn">Buy</button>
+                        <button className="buybtn" onClick={() => sentPackage()}>Buy</button>
                     </div>
 
                 )))

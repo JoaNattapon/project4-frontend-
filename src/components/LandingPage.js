@@ -15,7 +15,7 @@ const LandingPage = () => {
         console.log(username)
         axios
             .post
-            ("http://localhost:8000/login/",{
+            ("https://red-healthy-basket-clam.cyclic.app/user/login",{
                 username:username,
                 password:password,
             })

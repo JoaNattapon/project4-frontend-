@@ -6,13 +6,14 @@ import axios from "axios";
 import { useParams } from 'react-router';
 
 const Profile = () => {
-    const params= useParams()
+
+    const params = useParams()
     const [user, setUser] = useState({})
 
     
-    
     useEffect(() => {
-        axios.get(`http://localhost:8000/users/${params.id}`)
+
+        axios.get(`http://localhost:8000/edit/${params.id}`)
         .then(response => {
             setUser(response.data)
         })
