@@ -26,7 +26,7 @@ const PackageList = () => {
     useEffect(() => {
 
         axios
-            .get("http://localhost:8000/package")
+            .get("https://red-healthy-basket-clam.cyclic.app/package")
             .then((response) => {
                 console.log(response.data.packages)
                 // setPacks(response.data.packages)

@@ -20,6 +20,8 @@ const LandingPage = () => {
                 password:password,
             })
             .then((response) => {
+                let token = response.data;
+                localStorage.setItem("jwt", token);
                 setMessage('Logged in successfully')
             })
             .catch((error) => {

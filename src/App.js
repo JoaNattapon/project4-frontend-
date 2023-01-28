@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element={<Introduction />}/>
         <Route path='/letpackages' element={<PackageList />}/>
         <Route path='/letsignup' element={<SignupForm />}/>
-        <Route path='/profile/:id' element={<Profile />} />
+        <Route path='/profile' element={<Profile />} />
 
       </Routes>
       <FooterPage />
