@@ -4,17 +4,25 @@ import { BrowserRouter, Routes, Route, Link, Navigation } from 'react-router-dom
 import gsap from "gsap";
 import axios from "axios";
 
+
+// "https://red-healthy-basket-clam.cyclic.app"
 const PackageList = () => {
 
     const [allPacks, setAllPacks] = useState([]);
     // const [buyPack, setBuyPack] = useState();
 
     const sentPackage = (pack) => {
-        // console.log(username)
+        console.log(pack)
         axios
-            .post("https://red-healthy-basket-clam.cyclic.app/user/buypack", {
-                package: pack
-            })
+            .put("https://red-healthy-basket-clam.cyclic.app/package/buypack", 
+            {
+                package_id: pack 
+                
+            },
+            {
+                headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`},
+            }
+            )
             .then((response) => {
                 
             })
@@ -35,7 +43,7 @@ const PackageList = () => {
                     <div className="packs" key={i}>
                         <p>{items.description}</p>
                         <p>{items.price} THB / year</p>
-                        <button className="buybtn" onClick={() => sentPackage()}>Buy</button>
+                        <button className="buybtn" onClick={() => sentPackage(i)}>Buy</button>
                     </div>
 
                 )))

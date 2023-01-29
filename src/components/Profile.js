@@ -43,7 +43,7 @@ const Profile = () => {
                     address: address,
                     email: email,
                     phone: phone,
-                    package: mypackage
+                    package_id: mypackage
                 },
                 {
                     headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`},
@@ -63,25 +63,50 @@ const Profile = () => {
             .then((res) => {
                 console.log(res.data)
                 setDetail([
-                    <div>
-                        <h2>{user.name}Profile</h2>
+                    <div className="userprofile">
+                        <h2>User Profile</h2>
+
                         <form>
-                            
-                                <input className="signupbtn" type="text" value={user.username} defaultValue={res.data.username} onChange={(e) => { setUsername(e.target.value) }} />
-                            
-                                <input className="signupbtn" type="text" value={user.firstname} defaultValue={res.data.firstname} onChange={(e) => { setFirstname(e.target.value) }} />
-                            
-                                <input className="signupbtn" type="text" value={user.lastname} defaultValue={res.data.lastname} onChange={(e) => { setLastname(e.target.value) }} />
-                            
-                                <input className="signupbtn" type="text" value={user.phone} defaultValue={res.data.phone} onChange={(e) => { setPhone(e.target.value) }} />
-                            
-                                <input className="signupbtn" type="text" value={user.address} defaultValue={res.data.address} onChange={(e) => { setAddress(e.target.value) }} />
-                            
-                                <input className="signupbtn" type="text" value={user.email} defaultValue={res.data.email} onChange={(e) => { setEmail(e.target.value) }} />
-                            
-                                <input className="signupbtn" type="text" value={user.mypackage} defaultValue={res.data.mypackage} onChange={(e) => { setMyPackage(e.target.value) }} />
-                            
+                            <div className="wrapper">
+                                
+                                <div className="box">
+                                    <input type="text" value={user.username} defaultValue={res.data.username} onChange={(e) => { setUsername(e.target.value) }} />
+                                    <label>Username</label>
+                                </div>
+                        
+                                <div className="box">
+                                    <input type="text" value={user.firstname} defaultValue={res.data.firstname} onChange={(e) => { setFirstname(e.target.value) }} />
+                                    <label>Firstname</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={user.lastname} defaultValue={res.data.lastname} onChange={(e) => { setLastname(e.target.value) }} />
+                                    <label>Lastname</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={user.phone} defaultValue={res.data.phone} onChange={(e) => { setPhone(e.target.value) }} />
+                                    <label>Phone</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={user.address} defaultValue={res.data.address} onChange={(e) => { setAddress(e.target.value) }} />
+                                    <label>Address</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={user.email} defaultValue={res.data.email} onChange={(e) => { setEmail(e.target.value) }} />
+                                    <label>Email</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={user.mypackage} defaultValue={res.data.package_id} onChange={(e) => { setMyPackage(e.target.value) }} />
+                                    <label>My package</label>
+                                </div>
+                
+                            </div>
                         </form>
+
                         <button className="signupclick" onClick={() => edit()}>Confirm</button>
                     </div>
                 ])

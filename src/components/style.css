@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Syncopate:wght@700&display=swap');
 
 * {
     margin: 0;
@@ -6,6 +6,7 @@
 }
 body {
     background: rgb(16,55,134);
+    min-height: 1000px;
     background: linear-gradient(92deg, rgba(16,55,134,0.7261056286549707) 0%, rgba(159,246,9,1) 72%);
 }
 
@@ -23,9 +24,9 @@ body {
 }
 .landing-header h2 {
     position: absolute;
-    font-size: 3em;
-    font-family: 'Syncopate', sans-serif;
-    top: 20%;
+    font-size: 4em;
+    font-family: 'Quicksand', sans-serif;
+    top: 15%;
     text-align: center;
 }
 .below-header {
@@ -203,6 +204,64 @@ span:before {
     white-space: pre;
 }
 
+/* --------------------- User Profile------------------------ */
+.userprofile {
+    position: relative;
+    width: 80%;
+    padding: 20px;
+    /* background-color: antiquewhite; */
+    margin: 0 auto;
+}
+.userprofile h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 250px 250px;
+    gap: 20px;
+    background-color: aliceblue;
+}
+.wrapper .box {
+    max-width: 500px;
+    position: relative;
+    padding: 10px;
+    margin: 0 auto;
+    left: 20%;
+    right: 20%;
+    background-color: rgb(40, 211, 77);
+}
+.wrapper .box input {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(159, 246, 9);
+    transition: 0.5s linear;
+    background: transparent;
+}
+.wrapper .box input:focus,
+.wrapper.box input:valid {
+    padding: 12px 10px;
+    background-color: rgb(159, 246, 9);
+    margin-top: 20px;
+}
+.wrapper .box label {
+    position: absolute;
+    font-weight: 700;
+    font-size: 18px;
+    top: 0;
+    left: 9px;
+    color: rgb(8, 8, 8);
+    
+}
+.userprofile button {
+    
+}
+
 /* --------------------- FooterPage ------------------------- */
 
 .parentfooter {
@@ -264,5 +323,8 @@ span:before {
         position: absolute;
         top: 0;
         right: 0;
+    }
+    .wrapper {
+        grid-template-columns: 250px;
     }
 }
