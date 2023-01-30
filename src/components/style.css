@@ -207,9 +207,10 @@ span:before {
 /* --------------------- User Profile------------------------ */
 .userprofile {
     position: relative;
-    width: 80%;
+    max-width: 530px;
     padding: 20px;
     /* background-color: antiquewhite; */
+    
     margin: 0 auto;
 }
 .userprofile h2 {
@@ -221,16 +222,12 @@ span:before {
     display: grid;
     grid-template-columns: 250px 250px;
     gap: 20px;
-    background-color: aliceblue;
 }
 .wrapper .box {
     max-width: 500px;
     position: relative;
     padding: 10px;
     margin: 0 auto;
-    left: 20%;
-    right: 20%;
-    background-color: rgb(40, 211, 77);
 }
 .wrapper .box input {
     position: relative;
@@ -239,14 +236,14 @@ span:before {
     font-size: 20px;
     border: none;
     outline: none;
-    border-bottom: 2px solid rgb(159, 246, 9);
+    border-bottom: 2px solid rgb(29, 81, 213);
     transition: 0.5s linear;
     background: transparent;
 }
 .wrapper .box input:focus,
 .wrapper.box input:valid {
     padding: 12px 10px;
-    background-color: rgb(159, 246, 9);
+    background-color: rgb(29, 81, 213);
     margin-top: 20px;
 }
 .wrapper .box label {
@@ -259,7 +256,9 @@ span:before {
     
 }
 .userprofile button {
-    
+    position: absolute;
+    width: 70px;
+    left: 50%;
 }
 
 /* --------------------- FooterPage ------------------------- */

@@ -19,16 +19,6 @@ const Profile = () => {
     const [mypackage, setMyPackage] = useState("")
 
     
-    // useEffect(() => {
-
-    //     axios.get(`http://localhost:8000/edit/${params.id}`)
-    //     .then(response => {
-    //         setUser(response.data)
-    //     })
-    //     .catch(error => {
-    //         console.log(error)
-    //     })
-    // }, [])
 
     const edit = (e) => {
         
@@ -43,14 +33,14 @@ const Profile = () => {
                     address: address,
                     email: email,
                     phone: phone,
-                    package_id: mypackage
+                    // package_id: mypackage
                 },
                 {
                     headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`},
                 }
             )
             .then((res) => {
-                // console.log(res);
+                setUser(res.data)
                 
             });
     };
