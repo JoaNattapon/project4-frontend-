@@ -16,7 +16,9 @@
   go through all of the information they can dicide either they want to leave a page or go into other link such as registration, all packages. So, After they finish
   registration they will be able to log in using their username and password and they just regist. After that they can go to look up on insurance packages to see
   what suit them the most. Finally, in case they still have question to ask for they can look down on the footer they will see the contact for Dhipaya for more detail.
-  
+
+## ER Diagram 
+   https://www.canva.com/design/DAFZLp4_208/grSF_s8h3xkRm_N6_wFLCg/view?utm_content=DAFZLp4_208&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ## Wire frame
   Landing page - https://wireframe.cc/zJDlSE
   package detail - https://wireframe.cc/t4oirF
