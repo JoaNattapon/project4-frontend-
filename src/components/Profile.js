@@ -21,7 +21,8 @@ const Profile = () => {
     
 
     const edit = (e) => {
-        
+        e.preventDefault();
+        console.log(phone+"test");
         axios
             .put(
                 `https://red-healthy-basket-clam.cyclic.app/user/edit`,
@@ -33,73 +34,26 @@ const Profile = () => {
                     address: address,
                     email: email,
                     phone: phone,
-                    // package_id: mypackage
+                    package_id: mypackage
                 },
                 {
                     headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`},
                 }
             )
             .then((res) => {
-                setUser(res.data)
+                
                 
             });
     };
     useEffect((e) => {
         // e.preventDefault();
+        console.log(username);
         axios
             .get(`https://red-healthy-basket-clam.cyclic.app/user/getuser`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`},
             })
             .then((res) => {
                 console.log(res.data)
-                setDetail([
-                    <div className="userprofile">
-                        <h2>User Profile</h2>
-
-                        <form>
-                            <div className="wrapper">
-                                
-                                <div className="box">
-                                    <input type="text" value={user.username} defaultValue={res.data.username} onChange={(e) => { setUsername(e.target.value) }} />
-                                    <label>Username</label>
-                                </div>
-                        
-                                <div className="box">
-                                    <input type="text" value={user.firstname} defaultValue={res.data.firstname} onChange={(e) => { setFirstname(e.target.value) }} />
-                                    <label>Firstname</label>
-                                </div>
-                                
-                                <div className="box">
-                                    <input type="text" value={user.lastname} defaultValue={res.data.lastname} onChange={(e) => { setLastname(e.target.value) }} />
-                                    <label>Lastname</label>
-                                </div>
-                                
-                                <div className="box">
-                                    <input type="text" value={user.phone} defaultValue={res.data.phone} onChange={(e) => { setPhone(e.target.value) }} />
-                                    <label>Phone</label>
-                                </div>
-                                
-                                <div className="box">
-                                    <input type="text" value={user.address} defaultValue={res.data.address} onChange={(e) => { setAddress(e.target.value) }} />
-                                    <label>Address</label>
-                                </div>
-                                
-                                <div className="box">
-                                    <input type="text" value={user.email} defaultValue={res.data.email} onChange={(e) => { setEmail(e.target.value) }} />
-                                    <label>Email</label>
-                                </div>
-                                
-                                <div className="box">
-                                    <input type="text" value={user.mypackage} defaultValue={res.data.package_id} onChange={(e) => { setMyPackage(e.target.value) }} />
-                                    <label>My package</label>
-                                </div>
-                
-                            </div>
-                        </form>
-
-                        <button className="signupclick" onClick={() => edit()}>Confirm</button>
-                    </div>
-                ])
                 setUsername(res.data.username);
                 setPassword(res.data.password);
                 setFirstname(res.data.firstname);
@@ -107,7 +61,7 @@ const Profile = () => {
                 setPhone(res.data.phone);
                 setAddress(res.data.address);
                 setEmail(res.data.email);
-                setMyPackage(res.data.package);
+                setMyPackage(res.data.package_id);
             })
             .catch((err) => {
                 console.log(err);
@@ -117,7 +71,77 @@ const Profile = () => {
 
     return(
         <div>
-            {detail}
+                                <div className="userprofile">
+                        <h2>User Profile</h2>
+
+                        <form onSubmit={(a) => {
+                            a.preventDefault();
+                            console.log(phone+"test");
+                            axios
+                                .put(
+                                    `https://red-healthy-basket-clam.cyclic.app/user/edit`,
+                                    {
+                                        username: username,
+                                        password: password,
+                                        firstname: firstname,
+                                        lastname: lastname,
+                                        address: address,
+                                        email: email,
+                                        phone: phone,
+                                        // package_id: mypackage
+                                    },
+                                    {
+                                        headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`},
+                                    }
+                                )
+                                .then((res) => {
+                                    
+                                    
+                                });
+                        }}>
+                            <div className="wrapper">
+                                
+                                <div className="box">
+                                    <input type="text" value={username} defaultValue={username} onChange={(e) => { setUsername(e.target.value) }} />
+                                    <label>Username</label>
+                                </div>
+                        
+                                <div className="box">
+                                    <input type="text" value={firstname} defaultValue={firstname} onChange={(e) => { setFirstname(e.target.value) }} />
+                                    <label>Firstname</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={lastname} defaultValue={lastname} onChange={(e) => { setLastname(e.target.value) }} />
+                                    <label>Lastname</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={phone} defaultValue={phone} onChange={(e) => { setPhone(e.target.value) }} />
+                                    <label>Phone</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={address} defaultValue={address} onChange={(e) => { setAddress(e.target.value) }} />
+                                    <label>Address</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={email} defaultValue={email} onChange={(e) => { setEmail(e.target.value) }} />
+                                    <label>Email</label>
+                                </div>
+                                
+                                <div className="box">
+                                    <input type="text" value={mypackage} defaultValue={mypackage} onChange={(e) => { setMyPackage(e.target.value) }} />
+                                    <label>My package</label>
+                                </div>
+                
+                            </div>
+                            <button className="signupclick" type="submit">Confirm</button>
+                        </form>
+
+                        
+                    </div>
         </div>
     )
 }
