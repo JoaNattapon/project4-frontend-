@@ -30,8 +30,9 @@ const LandingPage = () => {
     }
     const logOutUser = () => {
         
-        localStorage.removeItem("jwt")
-        
+        localStorage.setItem("jwt", "")
+        document.getElementsByClassName('loginbtn').value=null
+        document.getElementsByClassName('logoutbtn').value=null
     }
 
     // Gsap Animation Apply
