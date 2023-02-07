@@ -8,7 +8,7 @@ const LandingPage = () => {
     // const loginInput = document.getElementsByClassName('loginbtn')
     // const logoutInput = document.getElementsByClassName('logoutbtn')
 
-    const [login,setLogin] = useState(localStorage.getItem("jwt") != null ? true:false);
+    const [login,setLogin] = useState(localStorage.getItem("jwt") != null ? true : false);
     // consition ? true .... : false ....
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -27,6 +27,7 @@ const LandingPage = () => {
                 let token = response.data
                 localStorage.setItem("jwt", token)
                 setMessage('Logged in successfully')
+                setLogin(true)
             })
             .catch((error) => {
                 console.log(error)
@@ -70,7 +71,7 @@ const LandingPage = () => {
                 <input className="logininput" type="password" placeholder="password"
                     value={password} onChange={(e) => setPassword(e.target.value)} />
 
-                {!login?<button className="loginbtn" onClick={() => sentUserPassword()}>Login</button> :
+                {!login ? <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button> :
                 <button className="logoutbtn" onClick={() => logOutUser()} >Log-out</button>}
 
                 <Link to='/letsignup' className="signuplink" ><p>Register</p></Link>
