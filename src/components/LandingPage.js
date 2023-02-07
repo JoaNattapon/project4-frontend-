@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link, Navigation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, Navigation, redirect } from 'react-router-dom';
 import './style.css';
 import gsap from "gsap";
 import axios from "axios";
@@ -20,8 +20,8 @@ const LandingPage = () => {
                 password:password,
             })
             .then((response) => {
-                let token = response.data;
-                localStorage.setItem("jwt", token);
+                let token = response.data
+                localStorage.setItem("jwt", token)
                 setMessage('Logged in successfully')
             })
             .catch((error) => {
@@ -30,8 +30,9 @@ const LandingPage = () => {
     }
     const logOutUser = () => {
         
-        localStorage.removeItem("jwt");
-        
+        localStorage.removeItem("jwt")
+        redirect("/")
+        setMessage('Logged out')
     }
 
     // Gsap Animation Apply
