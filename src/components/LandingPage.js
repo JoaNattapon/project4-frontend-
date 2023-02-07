@@ -28,6 +28,10 @@ const LandingPage = () => {
                 console.log(error)
             })
     }
+    const logOutUser = () => {
+        
+        localStorage.setItem("JWT", "");        
+    }
 
     // Gsap Animation Apply
 
@@ -62,6 +66,7 @@ const LandingPage = () => {
                     value={password} onChange={(e) => setPassword(e.target.value)} />
 
                 <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button>
+                <button className="logoutbtn" onClick={() => logOutUser()} >Log-out</button>
 
                 <Link to='/letsignup' className="signuplink" ><p>Register</p></Link>
                 <Link to='/' className="signuplink" ><p>Introduction</p></Link>

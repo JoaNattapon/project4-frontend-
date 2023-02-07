@@ -124,6 +124,16 @@ body {
 .loginbtn:active {
     transform: scale(0.95);
 }
+.logoutbtn {
+    width: 70px;
+    color: rgb(159, 246, 9);
+    background-color: red;
+    font-size: 1em;
+    cursor: pointer;
+}
+.logoutbtn:active {
+    transform: scale(0.95);
+}
 
 /* ------------- Pack Card ------------------- */
 .packs {
