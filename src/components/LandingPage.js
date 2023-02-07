@@ -5,6 +5,8 @@ import gsap from "gsap";
 import axios from "axios";
 
 const LandingPage = () => {
+    const loginInput = document.getElementsByClassName('loginbtn')
+    const logoutInput = document.getElementsByClassName('logoutbtn')
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -31,8 +33,8 @@ const LandingPage = () => {
     const logOutUser = () => {
         
         localStorage.setItem("jwt", "")
-        document.getElementsByClassName('loginbtn').value=null
-        document.getElementsByClassName('logoutbtn').value=null
+        loginInput.value="";
+        logoutInput.value="";
     }
 
     // Gsap Animation Apply
