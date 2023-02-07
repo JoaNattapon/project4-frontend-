@@ -31,7 +31,7 @@ const LandingPage = () => {
     const logOutUser = () => {
         
         localStorage.removeItem("jwt")
-        setMessage('Logged out')
+        
     }
 
     // Gsap Animation Apply
