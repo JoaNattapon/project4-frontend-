@@ -5,9 +5,11 @@ import gsap from "gsap";
 import axios from "axios";
 
 const LandingPage = () => {
-    const loginInput = document.getElementsByClassName('loginbtn')
-    const logoutInput = document.getElementsByClassName('logoutbtn')
+    // const loginInput = document.getElementsByClassName('loginbtn')
+    // const logoutInput = document.getElementsByClassName('logoutbtn')
 
+    const [login,setLogin] = useState(localStorage.getItem("jwt") != null ? true:false);
+    // consition ? true .... : false ....
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -33,8 +35,7 @@ const LandingPage = () => {
     const logOutUser = () => {
         
         localStorage.setItem("jwt", "")
-        loginInput.value="";
-        logoutInput.value="";
+        setLogin(false)
     }
 
     // Gsap Animation Apply
@@ -69,8 +70,8 @@ const LandingPage = () => {
                 <input className="logininput" type="password" placeholder="password"
                     value={password} onChange={(e) => setPassword(e.target.value)} />
 
-                <button className="loginbtn" onClick={() => sentUserPassword()}>Login</button>
-                <button className="logoutbtn" onClick={() => logOutUser()} >Log-out</button>
+                {!login?<button className="loginbtn" onClick={() => sentUserPassword()}>Login</button> :
+                <button className="logoutbtn" onClick={() => logOutUser()} >Log-out</button>}
 
                 <Link to='/letsignup' className="signuplink" ><p>Register</p></Link>
                 <Link to='/' className="signuplink" ><p>Introduction</p></Link>
