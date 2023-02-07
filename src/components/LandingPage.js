@@ -37,6 +37,8 @@ const LandingPage = () => {
         
         localStorage.setItem("jwt", "")
         setLogin(false)
+        setUsername("")
+        setPassword("")
     }
 
     // Gsap Animation Apply
