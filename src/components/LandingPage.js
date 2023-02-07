@@ -31,7 +31,6 @@ const LandingPage = () => {
     const logOutUser = () => {
         
         localStorage.removeItem("jwt")
-        redirect("/")
         setMessage('Logged out')
     }
 
